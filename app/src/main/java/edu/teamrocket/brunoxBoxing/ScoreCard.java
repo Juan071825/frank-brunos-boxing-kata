@@ -5,7 +5,7 @@ public class ScoreCard {
     final String color;
     String redCorner = "";
     String blueCorner = "";
-    final String[] judgeScoreCard;
+    String[] judgeScoreCard;
 
     Round[] rounds;
 
@@ -27,7 +27,7 @@ public class ScoreCard {
     }
 
     public byte getNumRounds() {    
-        return this.rounds.lenght();
+        return (byte) this.rounds.length;
     }
 
     public void loadJudgeScoreCard(String[] judgeScoreCard) {
