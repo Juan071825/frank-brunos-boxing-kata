@@ -21,6 +21,7 @@ class PointsDeducted implements Round {
                     break;
             case "8, 1":
                     this.redBoxerScore = parseComaRed(redBoxerScore);
+                    break;
             default: 
                     this.redBoxerScore = 0;
                     break;
@@ -32,10 +33,15 @@ class PointsDeducted implements Round {
                     break;
             case "8, 1":
                     this.blueBoxerScore = parseComaBlue(blueBoxerScore);
+                    break;
             default: 
                     this.blueBoxerScore = 0;
                     break;
         }
+    }
+
+    public String getRoundScore() {
+        return this.roundScore;
     }
 
     private byte parseComaRed(String score) {
@@ -50,12 +56,12 @@ class PointsDeducted implements Round {
 
     @Override
     public Byte getBlueBoxerScore() {
-        return this.getBlueBoxerScore();
+        return this.blueBoxerScore;
     }
 
     @Override
     public Byte getRedBoxerScore() {
-        return this.getRedBoxerScore();
+        return this.redBoxerScore;
     }
 
     @Override

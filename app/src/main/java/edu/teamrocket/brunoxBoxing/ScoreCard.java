@@ -1,5 +1,9 @@
 package edu.teamrocket.brunoxBoxing;
 
+import java.util.Collections;
+import java.util.List;
+import java.util.ArrayList;
+
 public class ScoreCard {
 
     final String color;
@@ -7,15 +11,15 @@ public class ScoreCard {
     String blueCorner = "";
     String[] judgeScoreCard;
 
-    Round[] rounds;
+    List<Round> rounds = new ArrayList<Round>();
 
     ScoreCard(String color) {
 
         this.color = color;
     }
     
-    public Round[] getRounds() {
-        return this.rounds; 
+    public List<Round> getRounds() {
+        return Collections.unmodifiableList(this.rounds);
     }
 
     public void setRCorner(String boxerName) {
@@ -27,7 +31,7 @@ public class ScoreCard {
     }
 
     public byte getNumRounds() {    
-        return (byte) this.rounds.length;
+        return (byte) this.rounds.size();
     }
 
     public void loadJudgeScoreCard(String[] judgeScoreCard) {
