@@ -18,5 +18,6 @@ public class RoundFactory {
             default: roundType = null;
                 break;
         }
+        return roundType;
     }
 }
