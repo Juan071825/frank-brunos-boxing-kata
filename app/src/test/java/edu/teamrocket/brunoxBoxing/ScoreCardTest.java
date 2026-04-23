@@ -21,7 +21,8 @@ public class ScoreCardTest {
                                         "10 - 9", 
                                         "9 - 10"};
 
-    private String[] pinkScoreCard =    {"9 - 10", 
+    private String[] pinkScoreCard =    
+                                        {"9 - 10", 
                                         "9 - 10", 
                                         "9 - 10", 
                                         "1, 8 - 10", // referee point deduction
