@@ -11,13 +11,14 @@ public class RegularRound implements Round {
 
     RegularRound(String roundScore){
         this.roundScore = roundScore.replace("\\s", "");
-        this.parseBoxerRoundScore();
     }
+
 
     public String getRoundScore() {
         return this.roundScore;
     }
 
+    
     public void parseBoxerRoundScore(){
 
         String[] scores = getRoundScore().split("-", 2);
