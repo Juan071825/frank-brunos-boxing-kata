@@ -34,8 +34,17 @@ public class ScoreCard {
         return (byte) this.rounds.size();
     }
 
-    public void loadJudgeScoreCard(String[] judgeScoreCard) {
-        this.judgeScoreCard = judgeScoreCard;
+    public void addRounds() {
+        for (String roundScores : judgeScoreCard){
+            if (roundScores != null) {
+                this.rounds.add(RoundFactory.getRound(roundScores));
+            }
+        }
+    }
+
+    public void loadJudgeScoreCard(String[] scoreCard) {
+        this.judgeScoreCard = scoreCard;
+        addRounds();
     }
 
     @Override   
@@ -64,7 +73,7 @@ public class ScoreCard {
     public int getBlueBoxerFinalScore() {
         int blueBoxerScore = 0;
         for (Round round : rounds) {
-            blueBoxerScore += round.getRedBoxerScore();
+            blueBoxerScore += round.getBlueBoxerScore();
         }
         return blueBoxerScore;
     }

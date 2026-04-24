@@ -12,7 +12,7 @@ public class RoundFactory {
             case "10 - 8", "8 - 10": roundType = new KnockdownRound(roundScore);
                 break;
 
-            case "1, 8 - 10", "10 - 1, 8": roundType = new PointsDeducted(roundScore);
+            case "1, 8 - 10", "10 - 8, 1": roundType = new PointsDeducted(roundScore);
                 break;
 
             default: roundType = null;
