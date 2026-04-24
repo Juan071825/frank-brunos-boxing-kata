@@ -5,14 +5,14 @@ public class RoundFactory {
     public static Round getRound(String roundScore){
 
         Round roundType;
-        switch (roundScore) {
-            case "10 - 9", "9 - 10": roundType = new RegularRound(roundScore);
+        switch (roundScore.replace("\s", "")) {
+            case "10-9", "9-10": roundType = new RegularRound(roundScore);
                 break;
         
-            case "10 - 8", "8 - 10": roundType = new KnockdownRound(roundScore);
+            case "10-8", "8-10": roundType = new KnockdownRound(roundScore);
                 break;
 
-            case "1, 8 - 10", "10 - 8, 1": roundType = new PointsDeducted(roundScore);
+            case "1,8-10", "10-8,1": roundType = new PointsDeducted(roundScore);
                 break;
 
             default: roundType = null;

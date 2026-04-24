@@ -59,7 +59,7 @@ public class ScoreCard {
                 + this.getRedBoxerFinalScore() 
                 + " - " 
                 + this.getBlueBoxerFinalScore() 
-                + " FINAL SCORE";
+                + "FINAL SCORE";
     }       
 
     public int getRedBoxerFinalScore() {
@@ -82,15 +82,15 @@ public class ScoreCard {
     private String viewRounds() {
         StringBuilder text = new StringBuilder();
 
-        text.append("\nRound\tScore\tRound\tRound\tScore")
-            .append("\nScore\tTotal\t\tTotal\tScore");
+        text.append("\n\t\sRound\tScore\tRound\tRound\tScore")
+            .append("\n\t\sScore\tTotal\t\tTotal\tScore");
 
         byte roundNum = 1;
         byte redBoxerScoreTotal = 0;
         byte blueBoxerScoreTotal = 0;
 
         for (Round round : this.rounds) {
-            text.append("\n\t")
+            text.append("\n\t\s\s")
                 .append(round.getRedBoxerScore())
                 .append("\t\s")
                 .append(redBoxerScoreTotal += round.getRedBoxerScore())
