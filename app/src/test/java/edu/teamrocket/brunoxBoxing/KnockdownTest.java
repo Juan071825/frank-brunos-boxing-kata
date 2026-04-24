@@ -9,7 +9,7 @@ public class KnockdownTest {
     @Test
     public void replaceTest() {
         KnockdownRound round = new KnockdownRound("10 - 8");
-        assertEquals(round.getRoundScore(), "10-8");
+        assertEquals("10-8", round.getRoundScore());
     }
 
     @Test

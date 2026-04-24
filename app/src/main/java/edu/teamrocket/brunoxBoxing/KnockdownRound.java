@@ -8,12 +8,13 @@ public class KnockdownRound implements Round{
 
 
     KnockdownRound(String roundScore){
-        this.roundScore = roundScore.replace("\\s", "");
+        this.roundScore = roundScore.replace("\s", "");
+        this.parseBoxerRoundScore();
     }
 
 
     public String getRoundScore() {
-        return this.roundScore;
+        return this.roundScore.replace("\s", "");
     }
 
 

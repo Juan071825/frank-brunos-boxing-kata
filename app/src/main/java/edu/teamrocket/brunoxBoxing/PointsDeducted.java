@@ -7,7 +7,8 @@ class PointsDeducted implements Round {
     byte blueBoxerScore;
 
     PointsDeducted(String roundScore) {
-        this.roundScore = roundScore;
+        this.roundScore = roundScore.replace("\s", "");
+        parseBoxerRoundScore();
     }
 
     void parseBoxerRoundScore() {
@@ -19,7 +20,7 @@ class PointsDeducted implements Round {
             case "10":
                     this.redBoxerScore = Byte.parseByte(redBoxerScore);
                     break;
-            case "8, 1":
+            case "1,8":
                     this.redBoxerScore = parseComaRed(redBoxerScore);
                     break;
             default: 
@@ -31,7 +32,7 @@ class PointsDeducted implements Round {
             case "10":
                     this.blueBoxerScore = Byte.parseByte(blueBoxerScore);
                     break;
-            case "8, 1":
+            case "8,1":
                     this.blueBoxerScore = parseComaBlue(blueBoxerScore);
                     break;
             default: 
@@ -46,7 +47,7 @@ class PointsDeducted implements Round {
 
     private byte parseComaRed(String score) {
         String[] points = score.split(",", 2);
-        return Byte.valueOf(points[0]);
+        return Byte.valueOf(points[1]);
     }
 
     private byte parseComaBlue(String score) {
